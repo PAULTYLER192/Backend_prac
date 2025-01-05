@@ -1,8 +1,13 @@
 const express = require('express');
 const app = express();
 
+const userRoutes = require('./routes/userRoutes');
+
 // Middleware to parse JSON
 app.use(express.json());
+
+//Middleware for routes
+app.use('/api',userRoutes);
 
 // Define a basic route
 app.get('/', (req, res) => {
